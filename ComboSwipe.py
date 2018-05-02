@@ -1,4 +1,10 @@
-import os, sys, time, random
+# Below code sets the position of the window before displaying
+window_x = -800
+window_y = 0
+import os
+os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (window_x,window_y)
+
+import sys, time, random
 import lib.Leap as Leap
 from lib.Leap import CircleGesture, SwipeGesture
 import pygame
@@ -27,7 +33,7 @@ def resource_path(relative_path):
 # PyGame globals
 display_width = 800
 display_height = 480
-gameDisplay = pygame.display.set_mode((display_width, display_height), pygame.FULLSCREEN)
+gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Combo Swipe')
 start_image = pygame.image.load(resource_path("assets\\start_image.png"))
 bg = pygame.image.load(resource_path("assets\\background.png"))
